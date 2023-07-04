@@ -1,14 +1,154 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  
-  <head>
-    <title>Título da página</title>
-    <meta charset="utf-8">
-  </head>
-   <body>
-     <p> URL DOCUSIGN <p/>
-     <div> 
-       <iframe width="100%" height="1000px" src="https://demo.docusign.net/Signing/MTRedeem/v1/c184a8d5-9942-4630-aaf9-e5ac9ff1783e?slt=eyJ0eXAiOiJNVCIsImFsZyI6IlJTMjU2Iiwia2lkIjoiNjgxODVmZjEtNGU1MS00Y2U5LWFmMWMtNjg5ODEyMjAzMzE3In0.AQYAAAABAAMABwAAfOIEdp3aSAgAABz0i5ed2kgYAAEAAAAAAAAAIQC8AgAAeyJUb2tlbklkIjoiYzMyZjkwZDAtOGYyMy00MzZhLWFlNTctN2Q1MDgxZGRkZjAxIiwiRXhwaXJhdGlvbiI6IjIwMjItMDktMjNUMTU6MTc6MjQrMDA6MDAiLCJJc3N1ZWRBdCI6IjIwMjItMDktMjNUMTU6MTI6MjQuNTM1OTY4KzAwOjAwIiwiUmVzb3VyY2VJZCI6IjFhYmE0YjkzLTcxMTQtNDc3Mi05NmM3LWFiYjE5NjhkMmI0NyIsIlJlc291cmNlcyI6IntcIkVudmVsb3BlSWRcIjpcIjFhYmE0YjkzLTcxMTQtNDc3Mi05NmM3LWFiYjE5NjhkMmI0N1wiLFwiQWN0b3JVc2VySWRcIjpcIjkxMTk5ODU1LWQ3MWItNGQ5MC1iOGZmLTZhYWNhNjI1N2M0NVwiLFwiUmVjaXBpZW50SWRcIjpcIjQ2ZTc5YmY1LWJkMjMtNDUzOC1hMjYzLThlYmYyNmQ2YzRhMlwiLFwiRmFrZVF1ZXJ5U3RyaW5nXCI6XCJ0PTc1ODk3N2NhLWQyZTQtNGZjNi05OTNlLWI2ZDc3ODJkOTkwMFwiLFwiSW50ZWdyYXRvcktleVwiOlwiZWViZGQzMDEtNTkxMS00NWQ4LTgyNDUtMjVlZWI2OWMxOTE5XCJ9IiwiVG9rZW5UeXBlIjoxLCJBdWRpZW5jZSI6IjI1ZTA5Mzk4LTAzNDQtNDkwYy04ZTUzLTNhYjJjYTU2MjdiZiIsIlJlZGlyZWN0VXJpIjoiaHR0cHM6Ly9kZW1vLmRvY3VzaWduLm5ldC9TaWduaW5nL1N0YXJ0SW5TZXNzaW9uLmFzcHgiLCJIYXNoQWxnb3JpdGhtIjowLCJIYXNoUm91bmRzIjowLCJUb2tlblN0YXR1cyI6MCwiSXNTaW5nbGVVc2UiOmZhbHNlfT8AgEMat3ad2kg.E-t3xDB54wihCuUBacJ8i1Nd0ZPk6RNWk5okscb38zgU9PWdM8QAxiKW-o6LEGcyignf354sGdYNmrfMP2OT_SUL21CWo2ShL7JG3G-Pl7L1sqjBO9lslKUMRenLAIrFtQQxvaHSpPM2kGI5fLowjcW8vcH-baX8AWXxAiiEY58FHM9nL_6FVWaPElU3TOwboiELEZVX9xte4YC6RcCbgspsykJUNxIR-BC3NdLHFWuA3xjxdlXqgYW41ZQF96k5i1BUYSrlfak0H4Tgftp70QN8Qpxlbig2mGwdWBXKws59o_OA2gqDMK83i1Nm4BGxXpC-L4WX_raMZhkXyufldQ" title="DOCU SIGN"></iframe>
-     </div>
-  </body>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<body>
+
+    <p>TESTE SCRIPT PAGE</p>
+
+<style type='text/css'>
+	.sidebarHeader {
+		background-color: #003c6a;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #003c6a;
+		font-family: "Arial", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #ffffff;
+	}
+    .embeddedServiceSidebarButton { 
+        background-color: #003c6a;
+    }
+    .embeddedServiceSidebarFormField .uiInput .uiLabel-left  {
+        color: #04a5e1 !important;
+    }
+    .embeddedServiceSidebarFormField .slds-style-inputtext, .embeddedServiceSidebarFormField .slds-style-select {
+        color: #04a5e1 !important;
+    }
+    
+    
+</style>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+	var initESW = function(gslbBaseURL) {
+		embedded_svc.settings.displayHelpButton = true; //Ou falso
+		embedded_svc.settings.language = 'pt-BR'; //Por exemplo, insira "pt" ou "pt-BR"
+
+		embedded_svc.settings.defaultMinimizedText = 'Especialista online'; //(Assume como padrão o Chat com um especialista)
+		embedded_svc.settings.disabledMinimizedText = 'Especialista offline'; //(Assume como padrão Agente off-line)
+
+		embedded_svc.settings.loadingText = 'Aguarde um instante ...'; //(Assume como padrão Carregando)
+		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Define o domínio de sua implantação para que seus visitantes possam navegar em subdomínios durante uma sessão de chat)
+
+		// Configurações para Chat
+		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+			// Returns a valid button ID.
+		//};
+		//embedded_svc.settings.fallbackRouting = []; //Uma matriz de IDs de botão, IDs de usuário ou userId_buttonId
+		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Padronizado para Entre em contato conosco)
+		
+		embedded_svc.settings.extraPrechatFormDetails = [
+		{
+			"label":"Primeiro Nome", 
+			"transcriptFields": ["Primeiro_Nome_Informado__c"]
+		},{
+			"label":"Sobrenome", 
+			"transcriptFields": ["Sobrenome_Informado__c"]
+		}, {
+		}, {
+			"label":"CPF", 
+			"transcriptFields": ["CPF_Informado__c"]
+		}, {
+			"label":"e-mail", 
+			"transcriptFields": ["Email_Informado__c"]
+		}, {
+			"label":"Já é cliente Previsul?", 
+			"transcriptFields": ["JaClientePrevisul__c"]
+		}
+		];
+
+
+		embedded_svc.settings.extraPrechatInfo = [
+		{
+			"entityFieldMaps": [{
+				"doCreate": false,
+				"doFind": true,
+				"fieldName": "CPF__c",
+				"isExactMatch": true,
+				"label": "CPF"
+			},{
+				"doCreate": false,
+				"doFind": true,
+				"fieldName": "FirstName",
+				"isExactMatch": true,
+				"label": "Primeiro Nome"
+			},{
+				"doCreate": false,
+				"doFind": true,
+				"fieldName": "LastName",
+				"isExactMatch": true,
+				"label": "Sobrenome"
+			},{
+				"doCreate": false,
+				"doFind": true,
+				"fieldName": "Email",
+				"isExactMatch": true,
+				"label": "e-mail"
+			}],
+			"entityName": "Contact"
+		},
+		{
+			"entityFieldMaps": [{
+				"doCreate": false,
+				"doFind": true,
+				"fieldName": "Numdoc__c",
+				"isExactMatch": true,
+				"label": "CPF"
+			}],
+			"entityName": "Account",
+			"saveToTranscript": "AccountId"
+		},{
+			"entityFieldMaps": [{
+				"doCreate": false,
+				"doFind": false,
+				"fieldName": "JaclientePrevisul__c",
+				"isExactMatch": true,
+				"label": "Já é cliente Previsul?"
+			}],
+			"entityName": "Case",
+		}];
+
+		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+		embedded_svc.settings.entryFeature = 'LiveAgent';
+
+		embedded_svc.init(
+			'https://caixaseguradora.my.salesforce.com',
+			'https://caixasegurosholding.force.com/portalsegurado',
+			gslbBaseURL,
+			'00D36000001HM3N',
+			'PREVISUL_Chat',
+			{
+				baseLiveAgentContentURL: 'https://c.la1-c1-ia7.salesforceliveagent.com/content',
+				deploymentId: '572Dm000000Tbwc',
+				buttonId: '573Dm000000TbwJ',
+				baseLiveAgentURL: 'https://d.la1-c1-ia7.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'PREVISUL_Chat',
+				isOfflineSupportEnabled: false
+			}
+		);
+	};
+
+	if (!window.embedded_svc) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://caixaseguradora.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
+</script>
+</body>
 </html>
