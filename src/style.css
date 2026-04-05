@@ -1,11 +1,12 @@
 /* PALETA DE CORES - VARIÁVEIS CSS */
 
 :root {
-  --color-salesforce-blue: #00A1E0;
+  --color-salesforce-blue: #00a0e0b9;
   --color-cyan-accent: #00CFFF;
   --color-navy: #0B2545;
   --color-bg: #0B2545;
   --color-text: #f4f8fb;
+  --color-subtext: #efeef6b3;
   --font-display: 'Montserrat', 'Segoe UI', Arial, sans-serif;
   --font-body: 'Segoe UI', Arial, sans-serif;
 }
@@ -19,6 +20,70 @@ html, body {
 }
 
 /* HERO SECTION */
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: 2.5rem;
+  padding: 0.2em 0.7em;
+  font-size: 1.13rem;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-weight: 600;
+  color: var(--color-subtext);
+  background: none;
+  border: none;
+  border-radius: 2em;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+  outline: none;
+}
+
+.hero-btn .arrow {
+  display: inline-block;
+  margin-left: 0.2em;
+  font-size: 1.1em;
+  transition: transform 0.3s cubic-bezier(.68,-0.55,.27,1.55);
+  animation: arrow-bounce 1.2s infinite;
+}
+
+@keyframes arrow-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+
+.hero-btn:hover,
+.hero-btn:focus {
+  color: var(--color-salesforce-blue);
+  background: none;
+}
+.hero-btn:hover .arrow,
+.hero-btn:focus .arrow {
+  color: var(--color-salesforce-blue);
+  /* animation: arrow-ping 0.5s cubic-bezier(.68,-0.55,.27,1.55) 2; */
+}
+
+@keyframes arrow-ping {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-7px);
+  }
+  60% {
+    transform: translateY(7px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .hero {
   width: 100%;
   min-height: 100vh;
@@ -61,7 +126,7 @@ html, body {
   margin-top: 0.2em;
 }
 .hero-desc {
-  color: #e3f6fd;
+  color: var(--color-subtext);
   font-size: 1.25rem;
   margin-bottom: 3.2rem;
   font-weight: 400;
@@ -69,7 +134,7 @@ html, body {
   margin-left: auto;
   margin-right: auto;
 }
-.hero-btn {
+/* .hero-btn {
   display: inline-block;
   background: var(--color-cyan-accent);
   color: var(--color-navy);
@@ -83,11 +148,9 @@ html, body {
   box-shadow: 0 2px 16px 0 rgba(0,161,224,0.10);
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   margin-bottom: 2.5rem;
-}
+} */
 .hero-btn:hover {
-  background: var(--color-salesforce-blue);
-  color: var(--color-cloud);
-  box-shadow: 0 4px 24px 0 rgba(0,161,224,0.18);
+  color: var(--color-salesforce-blue);
 }
 .arrow {
   font-size: 1.3em;
