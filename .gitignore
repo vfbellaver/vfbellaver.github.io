@@ -1,3 +1,6 @@
 .github/
 .agents/
 .specs/
+.cursor/
+.claude/
+.windsurf/
